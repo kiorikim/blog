@@ -1,0 +1,12 @@
+<h2>Edit article</h2>
+
+
+<% if @article.errors.any? %>
+  <ul>
+    <% @article.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <%end%>
+  </ul>
+<%end%>
+
+<%=render'form'%>

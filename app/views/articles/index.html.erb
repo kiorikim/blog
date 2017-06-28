@@ -1,5 +1,22 @@
 <h1>All articles</h1>
-<% @articles.each do |article| %>
-  <h3><%=article.title%></h3>
-  <h5><%=article.description%></h5>
-<% end %>
+<h4><%=link_to "New post", new_article_path%></h4>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Last update</th>
+    <th>Do</th>
+  </tr>
+  <% @articles.each do |article| %>
+    <tr>
+      <td><%=article.id%></td>
+      <td><%=article.title%></td>
+      <td><%=article.description%></td>
+      <td><%=article.updated_at.strftime("%H:%M:%S, %d/%m/%y")%></td>
+      <td><%= link_to "Open", article_path(article)%></td>
+      <td><%=link_to "Edit", edit_article_path(article)%></td>
+      <td><%=link_to "Delete", article_path(article),method: :delete, data: {confirm:"Are you sure?"} %></td>
+    </tr>
+  <% end %>
+</table>
