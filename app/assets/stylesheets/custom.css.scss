@@ -1,0 +1,32 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+.sucess
+{
+  border: 1px solid black;
+}
+.success td
+{
+  border: 1px solid black !important;
+}
+body{
+  font-family: 'Josefin Sans', sans-serif;
+  text-align:center;
+}
+.all_posts_table tr
+{
+  font-size: 1.5rem;
+}
+.name
+{
+  font-weight: bold;
+}
+.create
+{
+  font-weight: bold;
+  font-size: 4rem;
+  margin-bottom: 2%;
+}
+.form_description, .submit_button
+{
+  margin-bottom: 2%;
+}

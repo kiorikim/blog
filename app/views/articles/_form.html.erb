@@ -1,13 +1,13 @@
 <%=form_for @article do |f|%>
-  <p>
-    <%= f.label:title%>
-    <%= f.text_field :title%>
+  <p class="form_description">
+    <p><%= f.label:title%></p>
+    <p><%= f.text_field :title%></p>
   </p>
-  <p>
-    <%= f.label:description%>
-    <%= f.text_area :description%>
+  <p class="form_description">
+    <p><%= f.label:description%></p>
+    <p><%= f.text_area :description%></p>  
   </p>
-  <p>
+  <p class="submit_button">
     <%=f.submit%>
   </p>
 

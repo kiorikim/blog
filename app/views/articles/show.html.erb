@@ -1,5 +1,8 @@
 <h1><%= @article.title %></h1>
-<p><%= @article.description %></p>
-<%=link_to "Edit", edit_article_path(@article)%>
-<td><%=link_to "Delete", article_path(@article),method: :delete, data: {confirm:"Are you sure?"} %></td>
-<%= link_to "All posts", articles_path%>
+<h3><%= @article.description %></h3>
+<table class="table">
+  <tr class="success">
+    <td><%=link_to "Edit", edit_article_path(@article)%></td>
+    <td><%=link_to "Delete", article_path(@article),method: :delete, data: {confirm:"Are you sure?"} %></td>
+  </tr>
+</table>
