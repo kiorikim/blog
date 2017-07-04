@@ -1,0 +1,20 @@
+<%=form_for @user do |f|%>
+  <p class="form_description">
+    <p><%= f.label:username%></p>
+    <p><%= f.text_field :username, placeholder: "Username"%></p>
+  </p>
+  <p class="form_description">
+    <p><%= f.label:email%></p>
+    <p><%= f.email_field :email, placeholder: "Email"%></p>
+  </p>
+  <p class="form_description">
+    <p><%= f.label:password%></p>
+    <p><%= f.password_field :password, placeholder: "Password"%></p>
+  </p>
+  <p class="submit_button">
+    <%=f.submit(@user.new_record? ? "Sign up" : "Update")%>
+  </p>
+
+
+
+  <% end %>

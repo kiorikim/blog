@@ -1,0 +1,22 @@
+
+
+<h1>All articles by <%= @user.username%></h1> <br>
+<%=will_paginate @user_articles%>
+<%@user_articles.each do |article|%>
+  <div class="article_show">
+    <ul class="list-group">
+      <li class="list-group-item article_title"><%=article.title%></li>
+      <li class="list-group-item"><%=article.description%></li>
+      <li class="list-group-item">Created by: <%=article.user.username%></li>
+      <li class="list-group-item">
+        <ul class ="last_list_item">
+          <li><button type="button" class="btn btn-default"><%= link_to "Open", article_path(article)%></button></li>
+          <li><button type="button" class="btn btn-default"><%=link_to "Edit", edit_article_path(article)%></button></li>
+          <li><button type="button" class="btn btn-default"><%=link_to "Delete", article_path(article),method: :delete, data: {confirm:"Are you sure?"} %></button></li>
+          <li>Last update:</li>
+          <li id = "time"><%=article.updated_at.strftime("%H:%M:%S, %d/%m/%y")%></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+<%end%>
