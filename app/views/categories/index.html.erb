@@ -1,0 +1,13 @@
+<h1>All categories</h1>
+<%@categories.each do |c|%>
+  <ul style="text-align:left;">
+    <li class = "category_list">
+      <h3><%=link_to c.name, category_path(c)%></h4>
+          <%if current_user.admin?%>
+            <button type="button" class="btn btn-default"><%=link_to "Edit", edit_category_path(c)%></button></li>
+            <button type="button" class="btn btn-default" name="button"><%=link_to "Delete", categories_path, method: :delete, data: {confirm:"Are you sure?"}%></button>
+          <%end%>
+      </li>
+  </ul>
+
+<%end%>

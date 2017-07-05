@@ -1,0 +1,11 @@
+<h1>Add category</h1>
+<%= render'shared/errors', obj: @category%>
+<%=form_for @category do |c|%>
+  <p>
+    <%=c.label:category%> <br>
+    <%=c.text_field :name, placeholder: "Enter name"%>
+  </p>
+  <p>
+    <%=c.submit%>
+  </p>
+<%end%>

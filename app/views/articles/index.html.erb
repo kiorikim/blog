@@ -10,7 +10,7 @@
         <li class="list-group-item">
           <ul class ="last_list_item">
             <li><button type="button" class="btn btn-default"><%= link_to "Open", article_path(article)%></button></li>
-            <%if current_user == article.user%>
+            <%if current_user == article.user || current_user.admin%>
               <li><button type="button" class="btn btn-default"><%=link_to "Edit", edit_article_path(article)%></button></li>
               <li><button type="button" class="btn btn-default"><%=link_to "Delete", article_path(article),method: :delete, data: {confirm:"Are you sure?"} %></button></li>
             <%end%>

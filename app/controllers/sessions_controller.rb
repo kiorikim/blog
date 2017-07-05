@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       redirect_to user_path(user)
     else
       flash.now[:danger] = "Something went wrong"
-      renrer 'new'
+      render 'new'
     end
   end
 

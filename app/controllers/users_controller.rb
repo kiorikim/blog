@@ -25,6 +25,7 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    require_same_user
   end
 
   def update
@@ -37,9 +38,24 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+    @user = User.find(params[:id])
+    require_same_user
+    @user.destroy
+    flash[:succes] = "User deleted"
+      # redirect_to users_path
+  end
+
   private
   def user_params
     params.require(:user).permit(:username, :email, :password)
+  end
+
+  def require_same_user
+    if current_user != @user
+      flash[:danger] = "Only admin can perform this action"
+      redirect_to users_path
+    end
   end
 
 end
