@@ -1,1 +1,37 @@
-<h1><%=@category.name%></h1>
+<h1 style="margin-top:40px;"><%=@category.name%> <%=@category.articles.count%></h1>
+
+<%if logged_in? and current_user.admin?%>
+  <button type="button" class="btn btn-default"><%=link_to "Edit", edit_category_path(@category.id)%></button></li>
+  <button type="button" class="btn btn-default" name="button"><%=link_to "Delete", categories_path, method: :delete, data: {confirm:"Are you sure?"}%></button>
+<%end%>
+<h1>   </h1>
+<%=will_paginate @category_articles%>
+
+<%@category_articles.each do |a|%>
+<div class="article_show">
+  <ul class="list-group">
+    <li class="list-group-item article_title"><%=a.title%></li>
+    <li class="list-group-item"><%=a.description%></li>
+    <li class="list-group-item">Created by: <%=a.user.username%></li>
+    <li class="list-group-item">
+      <ul class ="last_list_item">
+        <%if a.categories.any?%>
+          <%a.categories.each do |category|%>
+          <%=link_to category.name, category_path(category), class: "badge"%>
+          <%end%>
+        <%end%>
+        <li><button type="button" class="btn btn-default"><%= link_to "Open", article_path(a.id)%></button></li>
+        <%if logged_in? and current_user == a.user || current_user.admin%>
+          <li><button type="button" class="btn btn-default"><%=link_to "Edit", edit_article_path(a.id)%></button></li>
+          <li><button type="button" class="btn btn-default"><%=link_to "Delete", article_path(a.id),method: :delete, data: {confirm:"Are you sure?"} %></button></li>
+        <%end%>
+        <li>Last update:</li>
+        <li id = "time"><%=a.updated_at.strftime("%H:%M:%S, %d/%m/%y")%></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+
+<%end%>
+<%=will_paginate @category_articles%>

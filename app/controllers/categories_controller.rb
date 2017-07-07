@@ -17,6 +17,7 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find(params[:id])
+    @category_articles = @category.articles.paginate(:page => params[:page], :per_page => 4)
   end
   def edit
     @category = Category.find(params[:id])
@@ -36,7 +37,7 @@ class CategoriesController < ApplicationController
     @article.destroy
     flash[:danger] = "Category was deleted"
   end
-  
+
   private
   def category_params
     params.require(:category).permit(:name)

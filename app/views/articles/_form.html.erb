@@ -1,16 +1,21 @@
 <%=form_for @article do |f|%>
-  <p class="form_description">
+  <div class="form_description">
     <p><%= f.label:title%></p>
     <p><%= f.text_field :title%></p>
-  </p>
-  <p class="form_description">
+  </div>
+  <div class="form_description">
     <p><%= f.label:description%></p>
-    <p><%= f.text_area :description%></p>  
-  </p>
-  <p class="submit_button">
-    <%=f.submit%>
-  </p>
+    <p><%= f.text_area :description%></p>
+  </div>
+  <div class=“form-group”>
+    <%= f.collection_check_boxes  :category_ids, Category.all, :id, :name do |cb| %>
+        <%= cb.label(class: "check_box") { cb.check_box(class: "check_box") + cb.text} %>
+        <%#=check_box_tag(:cb) + cb.text %>
+    <%end%>
+  </div>
+    <p class="submit_button">
+      <%=f.submit%>
+    </p>
 
 
-
-  <% end %>
+<% end %>

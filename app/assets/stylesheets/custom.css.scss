@@ -3,8 +3,40 @@
 body{
   font-family: 'Josefin Sans', sans-serif;
   text-align:center;
-
+  background-color: #fdf6ee;
 }
+.navbar
+{
+  margin-bottom: -20px;
+  border-radius: 0;
+}
+.home
+{
+  margin-top: 0;
+  background-image: url(img/1.jpg);
+  height: 100vh;
+}
+.main_page_open
+{
+  padding-top: 25%;
+}
+.open_link
+{
+  color: black;
+  font-weight: 600;
+  font-size: 4.5rem;
+}
+.open_link:hover
+{
+  color:black;
+}
+.list-group-item
+{
+  background-color: #faebd7;
+  border: 1px solid black;
+}
+
+
 .sucess
 {
   border: 1px solid black;
@@ -23,10 +55,6 @@ body{
 .form_description, .submit_button
 {
   margin-bottom: 2%;
-}
-.main_page
-{
-  margin-top: 15%;
 }
 .article_show
 {

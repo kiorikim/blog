@@ -1,6 +1,6 @@
 <h1><%= @article.title %></h1>
 <h3><%= @article.description %></h3>
-<h5><%= @article.user.username %></h5>
+<h5>Created by:<%= @article.user.username %></h5>
 <table class="table">
   <tr class="success">
     <%if current_user == @article.user || current_user.admin%>
