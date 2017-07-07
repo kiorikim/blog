@@ -1,6 +1,6 @@
 
 
-<h1>All articles by <%= @user.username%></h1> <br>
+<h1 style="margin-top:40px;">All articles by <%= @user.username%></h1> <br>
 <%=will_paginate @user_articles%>
 <%@user_articles.each do |article|%>
   <div class="article_show">

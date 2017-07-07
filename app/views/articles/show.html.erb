@@ -1,11 +1,11 @@
-<h1><%= @article.title %></h1>
+<h1 style="margin-top:40px;"><%= @article.title %></h1>
 <h3><%= @article.description %></h3>
 <h5>Created by:<%= @article.user.username %></h5>
 <table class="table">
   <tr class="success">
     <%if current_user == @article.user || current_user.admin%>
-      <td><%=link_to "Edit", edit_article_path(@article)%></td>
-      <td><%=link_to "Delete", article_path(@article),method: :delete, data: {confirm:"Are you sure?"} %></td>
+      <td style = "width:50%"><%=link_to "Edit", edit_article_path(@article)%></td>
+      <td style = "width:50%"><%=link_to "Delete", article_path(@article),method: :delete, data: {confirm:"Are you sure?"} %></td>
       <%end%>
   </tr>
 </table>
