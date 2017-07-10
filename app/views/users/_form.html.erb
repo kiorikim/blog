@@ -1,3 +1,9 @@
+<% flash.each do |name, msg|%>
+<div class="alert alert-success alert-dismissible myalert" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <strong> <%= msg %></strong>
+  </div>
+<% end %>
 <%=form_for @user do |f|%>
   <p class="form_description">
     <p><%= f.label:username%></p>

@@ -1,3 +1,9 @@
+<% flash.each do |name, msg|%>
+<div class="alert alert-success alert-dismissible myalert" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <strong> <%= msg %></strong>
+  </div>
+<% end %>
 <h1 style="margin-top:40px;" >Users</h1> <br>
 <%=will_paginate @users%>
   <%@users.each do |user|%>

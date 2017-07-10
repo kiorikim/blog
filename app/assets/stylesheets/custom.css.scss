@@ -7,7 +7,7 @@ body{
 }
 .navbar
 {
-  margin-bottom: -20px;
+  margin-bottom: 0px;
   border-radius: 0;
 }
 .home
@@ -19,9 +19,11 @@ body{
 .main_page_open
 {
   padding-top: 25%;
+  margin: 0;
 }
 .open_link
 {
+  margin: 0;
   color: black;
   font-weight: 600;
   font-size: 4.5rem;
@@ -35,7 +37,10 @@ body{
   background-color: #faebd7;
   border: 1px solid black;
 }
-
+.myalert
+{
+  margin:0;
+}
 
 .sucess
 {
